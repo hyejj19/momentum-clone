@@ -5,7 +5,7 @@ const greeting = document.querySelector("#greeting")
 const HIDDEN_CLASSNAME ="hidden"; //string으로만 구성된 변수를 저장하고 싶을 땐 대문자로 변수명을 지정하는 관례가 있음.
 const USERNAME_KEY = "username"; //반복되는 단어가 있다면, 오류를 줄이기 위해 변수로 선언해주는 것이 좋다.
 
-function onLoginSubmit(event) { //form에 추가된 submit 이벤트 리스너.
+function onLoginSubmit(event) { //form에 추가된 submit 이벤트 리스너가 실행시키는 함수.
     event.preventDefault(); // submit시 새로고침되는 기본 행동을 억제한다.
     const username = loginInput.value; //username 변수에 사용자가 input에 입력한 value를 담고
     localStorage.setItem("username", username); //이를 브라우저의 로컬 스토리지에 저장한다.
