@@ -13,8 +13,9 @@ function saveToDos() {
 
 function deleteToDo(event) {
     const li = event.target.parentElement; // event>target>parentElement- 정확히 어떤 버튼을 클릭했고 그 부모요소를 특정.
-    console.log(li.id);
-    li.remove();
+    li.remove(); //li 요소 삭제.
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)) //toDo의 id 가 li의 id와 다른 것을 남긴다 -> toDo.id !== li.id, 남겨진 것들로 재할당. //괄호 안의 toDo는 toDos 안의 element.li.id는 문자열인데, toDo.id는 숫자이므로, li.id를 parseInt해 타입을 맞춰준다.
+    saveToDos(); //변경된 toDos arr를 다시한 번 저장.
 }
 
 
